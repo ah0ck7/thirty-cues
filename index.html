@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thirty Cues</title>
+<meta name="description" content="Thirty lessons from nearly ten years on Watermark Community Church’s production team, each rooted in the church’s vision, its 10 Markers, and the team’s values.">
+<meta name="theme-color" content="#F5F7F9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1419" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Thirty Cues">
+<meta property="og:description" content="What nearly ten years on the production team taught me, written for whoever sits in the producer’s chair next.">
+<meta property="og:url" content="https://ah0ck7.github.io/thirty-cues/">
+<meta property="og:image" content="https://ah0ck7.github.io/thirty-cues/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230E1419'/%3E%3Crect x='6' y='8' width='20' height='4' fill='%23E6EBEF'/%3E%3Crect x='6' y='14' width='15' height='4' fill='%23AAB6C0'/%3E%3Crect x='6' y='20' width='10' height='4' fill='%237F8C97'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Page frame: the safe-area padding, zero body margin, and hidden rule the page was designed around */
+:root{padding-top:env(safe-area-inset-top, 0px);padding-bottom:env(safe-area-inset-bottom, 0px)}
+body{margin:0}
+[hidden]{display:none!important}
+:root{
+  /* Layout: one ~66ch reading column. On wide screens each lesson gets a narrow left "cue rail" for its number, like a run of show.
+     The three parts echo the vision slide: dark, then mid, then light type for "Abiding in Jesus, / we are making disciples / together." */
+  --bg:#F5F7F9;
+  --surface:#FFFFFF;
+  --ink:#14212B;
+  --ink-2:#4A5763;
+  --ink-3:#5F6C77;
+  --tone-3:#74818C;
+  --rule:#D6DDE3;
+  --accent:#0C4A6E;
+  --accent-ink:#FFFFFF;
+  --accent-soft:#E3ECF3;
+  --shadow:0 10px 30px rgba(16,32,48,.18);
+  --font-display:"Oswald","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --font-body:"Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --measure:66ch;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1419; --surface:#151D24; --ink:#E6EBEF; --ink-2:#AAB6C0; --ink-3:#8E9BA6; --tone-3:#7F8C97;
+    --rule:#27323C; --accent:#8EC3E6; --accent-ink:#0E1419; --accent-soft:#182836; --shadow:0 10px 30px rgba(0,0,0,.55);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1419; --surface:#151D24; --ink:#E6EBEF; --ink-2:#AAB6C0; --ink-3:#8E9BA6; --tone-3:#7F8C97;
+  --rule:#27323C; --accent:#8EC3E6; --accent-ink:#0E1419; --accent-soft:#182836; --shadow:0 10px 30px rgba(0,0,0,.55);
+  color-scheme:dark;
+}
+
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.page{max-width:1040px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:56px 72px;display:flex;flex-direction:column;gap:72px}
+h1,h2,h3{font-family:var(--font-display);font-weight:500;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit;text-decoration-color:var(--rule);text-underline-offset:3px}
+a:hover{color:var(--accent);text-decoration-color:currentColor}
+:where(a,button,summary):focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+.eyebrow{font-family:var(--font-display);font-weight:400;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+
+/* Hero */
+.hero{display:flex;flex-direction:column;gap:20px}
+.hero h1{font-size:clamp(3.25rem,11vw,6.5rem);line-height:.95;letter-spacing:.01em;text-transform:uppercase;font-weight:600}
+.dek{font-size:clamp(1.15rem,2.4vw,1.4rem);line-height:1.45;color:var(--ink-2);max-width:40ch}
+.roles{display:flex;flex-wrap:wrap;gap:6px 10px;font-family:var(--font-display);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.roles span+span::before{content:"\2192";margin-right:10px;color:var(--tone-3)}
+.intro{display:flex;flex-direction:column;gap:14px;max-width:var(--measure);margin-top:8px}
+
+/* Foundation */
+.foundation{--fpad:clamp(20px,4vw,40px);background:var(--surface);border:1px solid var(--rule);border-radius:14px;padding:var(--fpad);display:flex;flex-direction:column;gap:28px}
+.vision-line{font-family:var(--font-display);font-weight:500;font-size:clamp(2rem,5.6vw,3.6rem);line-height:1.08;text-wrap:balance}
+.vision-line span{display:block}
+.t1{color:var(--ink)} .t2{color:var(--ink-2)} .t3{color:var(--tone-3)}
+.vision-ref{font-size:.95rem;color:var(--ink-3);margin-top:-14px}
+.hint{font-size:.95rem;color:var(--ink-2)}
+.col-label{font-family:var(--font-display);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.purpose{font-size:.95rem;color:var(--ink-2);line-height:1.5}
+
+/* Chips */
+.root{display:inline-flex;align-items:baseline;gap:6px;font:400 .86rem/1.25 var(--font-body);color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:6px 11px;cursor:pointer;text-align:left}
+.root .kind{font-family:var(--font-display);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.root[aria-expanded="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.root[aria-expanded="true"] .kind{color:var(--accent-ink)}
+
+.main{display:flex;flex-direction:column;gap:inherit}
+.root-note .ex-lessons{margin-top:2px}
+
+/* Utilities */
+.sr{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+html,body{overflow-anchor:none}
+:root:not(.is-live) .hint,:root:not(.is-live) .ex-chev{display:none}
+
+/* Foundation explorer: one list of rows; the open row carries the one drawer */
+.explorer{--ex-edge:var(--rule);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px;align-items:start;border-top:1px solid var(--rule);padding-top:24px}
+.root-note{--ex-edge:var(--rule)}
+@supports (color:color-mix(in srgb,red 50%,blue)){.explorer,.root-note{--ex-edge:color-mix(in srgb,var(--accent) 35%,var(--rule))}}
+.ex-col{min-width:0;display:flex;flex-direction:column;gap:32px}
+.ex-group{min-width:0}
+.ex-h{font-size:.8rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+.ex-sub{font-family:var(--font-display);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:16px 0 2px}
+.ex-h+.ex-sub{margin-top:4px}
+.ex-group .purpose{margin-bottom:8px}
+.ex-list{list-style:none;margin:0;padding:0}
+.ex-list>li+li{border-top:1px solid var(--rule)}
+.ex-row{scroll-margin-top:12px}
+.ex-head{padding:12px 12px 12px 14px}
+.is-live .ex-head{cursor:pointer}
+.ex-item{box-sizing:border-box;display:flex;align-items:center;gap:10px;width:100%;min-height:28px;margin:0;padding:0;background:none;border:0;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.ex-name{flex:1 1 auto;min-width:0;font-family:var(--font-display);font-weight:500;font-size:1.1rem;line-height:1.25;color:var(--ink)}
+.ex-count{flex:none;font-family:var(--font-display);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.ex-chev{flex:none;display:block;width:7px;height:7px;margin:0 4px 0 2px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;color:var(--ink-3);transform:translateY(-2px) rotate(45deg)}
+.ex-def{margin-top:4px;font-size:.92rem;line-height:1.5;color:var(--ink-2)}
+.ex-ref{font-size:.82rem;color:var(--ink-3)}
+.ex-row.is-open{background:var(--accent-soft);background-clip:padding-box;border-radius:12px;box-shadow:inset 3px 0 0 var(--accent),inset 0 0 0 1px var(--ex-edge)}
+.ex-list>li.is-open,.ex-list>li.is-open+li{border-top-color:transparent}
+.ex-row.is-open>.ex-head .ex-name,.ex-row.is-open>.ex-head .ex-chev{color:var(--accent)}
+.ex-row.is-open>.ex-head .ex-chev{transform:translateY(2px) rotate(-135deg)}
+.ex-row.is-open>.ex-head .ex-count,.ex-row.is-open>.ex-head .ex-ref{color:var(--ink-2)}
+
+/* The drawer */
+.ex-panel{padding:0 12px 14px 14px}
+.ex-panel[hidden]{display:none}
+.ex-meta{padding:10px 0 4px;border-top:1px solid var(--ex-edge);font-size:.85rem;line-height:1.45;color:var(--ink-2)}
+.ex-lessons{list-style:none;margin:0;padding:0}
+.ex-lessons>li+li{border-top:1px solid var(--ex-edge)}
+.ex-lesson>summary{display:block;list-style:none;cursor:pointer;border-radius:4px;scroll-margin-top:12px}
+.ex-lesson>summary::-webkit-details-marker{display:none}
+.ex-sum{box-sizing:border-box;display:grid;grid-template-columns:2.2rem minmax(0,1fr) auto;gap:10px;align-items:start;min-height:48px;padding:12px 0}
+.ex-num{font-family:var(--font-display);font-weight:300;font-size:1.35rem;line-height:1.1;color:var(--accent);font-variant-numeric:tabular-nums}
+.ex-ttl{min-width:0;font-family:var(--font-display);font-weight:500;font-size:1.02rem;line-height:1.3;color:var(--ink)}
+.ex-cite{display:block;margin-top:3px;font-family:var(--font-body);font-weight:400;font-size:.8rem;letter-spacing:.01em;color:var(--ink-2)}
+.ex-sum .ex-chev{margin-top:8px}
+.ex-lesson[open] .ex-sum .ex-chev{transform:translateY(2px) rotate(-135deg);color:var(--accent)}
+.ex-body{display:flex;flex-direction:column;gap:12px;padding:0 0 18px}
+.ex-body>p:first-child{font-size:1rem;line-height:1.6;color:var(--ink)}
+.ex-panel .verse cite,.ex-panel .learned,.ex-panel .learned-label,.ex-panel .roots-label{color:var(--ink-2)}
+.ex-hop .hop{color:var(--accent)}
+.ex-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;font-size:.9rem}
+.ex-goto{color:var(--accent);text-decoration-color:currentColor}
+.ex-fold,.ex-close,.note-close{box-sizing:border-box;min-height:36px;padding:8px 16px;font:500 .78rem/1.2 var(--font-display);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);background:var(--surface);border:1px solid var(--rule);border-radius:999px;cursor:pointer}
+.ex-close{display:block;width:100%;min-height:44px;margin-top:6px}
+
+/* Notes under a lesson's Rooted-in pills */
+.root-note{display:flex;flex-direction:column;gap:6px;padding:14px 16px;background:var(--surface);border:1px solid var(--rule);border-radius:10px;font-size:.92rem;line-height:1.5}
+.root-note[hidden]{display:none}
+.note-kind{font-family:var(--font-display);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.note-name{font-family:var(--font-display);font-weight:500;font-size:1.3rem;line-height:1.2;color:var(--ink)}
+.root-note .ex-def{margin-top:0}
+.note-count{font-size:.85rem;color:var(--ink-2)}
+.note-sub{margin-top:6px;font-family:var(--font-display);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.note-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.note-list a{display:grid;grid-template-columns:2.1rem minmax(0,1fr);gap:6px;padding:5px 0;text-decoration:none}
+.note-list .n{font-family:var(--font-display);color:var(--accent);font-variant-numeric:tabular-nums}
+.note-list .t{text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:3px}
+.note-close{align-self:flex-start;margin-top:6px}
+.is-live article.lesson .roots .root::after{content:"";flex:none;align-self:center;width:5px;height:5px;margin-left:1px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg);opacity:.7}
+.is-live article.lesson .roots .root[aria-expanded="true"]::after{transform:translateY(1px) rotate(-135deg);opacity:1}
+
+@media (hover:hover){
+  .root:hover{border-color:var(--accent)}
+  .ex-head:hover .ex-name,.ex-head:hover .ex-chev,.ex-lesson>summary:hover .ex-ttl{color:var(--accent)}
+  .ex-fold:hover,.ex-close:hover,.note-close:hover{border-color:var(--accent);color:var(--accent)}
+  .note-list a:hover .t{text-decoration-color:currentColor}
+}
+@media (prefers-reduced-motion:no-preference){
+  .ex-panel:not([hidden]){animation:ex-in .16s ease-out}
+  .ex-chev,.is-live article.lesson .roots .root::after{transition:transform .16s ease}
+}
+@keyframes ex-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@media (max-width:480px){
+  .ex-list>li.is-open{margin-left:calc(-1 * var(--fpad));margin-right:calc(-1 * var(--fpad));border-radius:0;box-shadow:inset 3px 0 0 var(--accent),inset 0 1px 0 var(--ex-edge),inset 0 -1px 0 var(--ex-edge)}
+  .ex-row.is-open>.ex-head{padding-left:calc(14px + var(--fpad));padding-right:calc(12px + var(--fpad))}
+  .ex-row.is-open>.ex-panel{padding-left:16px;padding-right:16px}
+}
+
+/* Index */
+.index{display:flex;flex-direction:column;gap:20px}
+.index h2{font-size:clamp(1.6rem,3.4vw,2.1rem)}
+.index-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 32px}
+.index-cols>div{min-width:0;display:flex;flex-direction:column;gap:10px}
+.index ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.index li{display:grid;grid-template-columns:2.1rem minmax(0,1fr);gap:6px;font-size:.98rem;line-height:1.4}
+.index .n{font-family:var(--font-display);color:var(--ink-3);font-variant-numeric:tabular-nums}
+
+/* Parts */
+.part{display:flex;flex-direction:column}
+.part-head{display:flex;flex-direction:column;gap:10px;padding-bottom:28px}
+.part-head h2{font-size:clamp(2.3rem,6.5vw,4.2rem);line-height:1}
+.p1 .part-head h2{color:var(--ink)}
+.p2 .part-head h2{color:var(--ink-2)}
+.p3 .part-head h2{color:var(--tone-3)}
+.part-sub{font-size:1.1rem;color:var(--ink-2);max-width:var(--measure)}
+.part-markers{font-family:var(--font-display);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+
+/* Lessons */
+.lesson{display:grid;grid-template-columns:6.5rem minmax(0,1fr);gap:0 28px;padding-block:34px;border-top:1px solid var(--rule);scroll-margin-top:24px}
+.cue{display:flex;flex-direction:column;font-family:var(--font-display);line-height:1}
+.cue-label{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.cue-num{font-size:3rem;font-weight:300;color:var(--ink-3);font-variant-numeric:tabular-nums;margin-top:4px}
+.lesson:target .cue-num,.lesson:target .cue-label{color:var(--accent)}
+.lesson-main{min-width:0;display:flex;flex-direction:column;gap:14px;max-width:var(--measure)}
+.lesson-title{font-size:clamp(1.4rem,3vw,1.75rem);line-height:1.2;color:var(--ink)}
+.verse{margin:2px 0 0;padding:2px 0 2px 14px;border-left:2px solid var(--accent);display:flex;flex-direction:column;gap:2px}
+.verse p{font-style:italic;color:var(--ink-2);font-size:.98rem;line-height:1.55}
+.verse cite{font-style:normal;font-size:.82rem;color:var(--ink-3);letter-spacing:.02em}
+.roots{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.roots-label,.learned-label{font-family:var(--font-display);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-right:4px}
+.learned{font-size:.9rem;line-height:1.55;color:var(--ink-3)}
+.learned-label{display:block;margin-bottom:2px}
+
+/* Close */
+.close{display:flex;flex-direction:column;gap:16px;max-width:var(--measure)}
+.close h2{font-size:clamp(1.8rem,4vw,2.6rem)}
+.signoff{font-family:var(--font-display);font-weight:500;font-size:2rem;letter-spacing:.06em;color:var(--accent);margin-top:6px}
+.sources{border-top:1px solid var(--rule);padding-top:24px;display:flex;flex-direction:column;gap:10px;font-size:.85rem;line-height:1.55;color:var(--ink-3);max-width:80ch}
+
+@media (max-width:760px){
+  .page{gap:56px;padding-block:36px 64px}
+  .index-cols{grid-template-columns:1fr}
+  .explorer{grid-template-columns:minmax(0,1fr);row-gap:32px}
+  .lesson{grid-template-columns:1fr;gap:10px}
+  .cue{flex-direction:row;align-items:baseline;gap:8px}
+  .cue-num{font-size:1.6rem;margin-top:0}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <p class="eyebrow">Watermark Community Church · Production Team · 2017–2026</p>
+    <h1>Thirty Cues</h1>
+    <p class="dek">What nearly ten years on the production team taught me, written for whoever sits in the producer’s chair next.</p>
+    <p class="roles"><span>Tech Arts</span><span>Video Production Coordinator</span><span>Video Content Director</span><span>Production Director, Auditorium</span><span>Creative Director</span></p>
+    <div class="intro">
+      <p>I joined the Tech Arts team in February 2017. On my third day on staff, Blake sent a few of us a note about not letting the demands of ministry crowd out our time with the Lord. I wrote back that I already felt the tug of responsibilities against time abiding, and that I was stopping. That reply turned out to be the first lesson, and it is still the most important one.</p>
+      <p>Since then I’ve directed video, produced Sundays, led this team, and written W/OFIs nearly every week since 2022. These are thirty things I learned along the way, said the way I’d want to say them to whoever comes next. Each one rests on what we already believe: our vision, our 10 Markers, our team values, and the Objectives &amp; Values we have handed to new volunteers since 2018.</p>
+    </div>
+  </header>
+
+  <main class="main">
+  <section class="foundation" aria-labelledby="foundation-h">
+    <h2 class="eyebrow" id="foundation-h">What these rest on</h2>
+    <p class="vision-line"><span class="t1">Abiding in Jesus,</span><span class="t2">we are making disciples</span><span class="t3">together.</span></p>
+    <p class="vision-ref">Our vision · Colossians 1:28</p>
+    <p class="hint">Tap any marker, value, principle, or objective to open the lessons rooted in it right here. Tap a lesson to read it in full.</p>
+
+    <div class="explorer" id="explorer">
+      <div class="ex-col">
+        <div class="ex-group">
+          <h3 class="ex-h">The 10 Markers</h3>
+          <p class="ex-sub" id="exs-abiding">Abiding in Jesus</p>
+          <ul class="ex-list" role="list" aria-labelledby="exs-abiding">
+            <li class="ex-row" data-key="m-gospel" data-kind="Marker · Abiding in Jesus"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">A Gospel-Saturated Church</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button></div></li>
+            <li class="ex-row" data-key="m-praying" data-kind="Marker · Abiding in Jesus"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">A Praying Church</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button></div></li>
+            <li class="ex-row" data-key="m-spirit" data-kind="Marker · Abiding in Jesus"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">A Spirit-Led Church</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button></div></li>
+            <li class="ex-row" data-key="m-bible" data-kind="Marker · Abiding in Jesus"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">A Bible-Revering Church</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button></div></li>
+          </ul>
+          <p class="ex-sub" id="exs-making">Making disciples</p>
+          <ul class="ex-list" role="list" aria-labelledby="exs-making">
+            <li class="ex-row" data-key="m-missional" data-kind="Marker · Making disciples"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">A Missional Church</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button></div></li>
+            <li class="ex-row" data-key="m-maturing" data-kind="Marker · Making disciples"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">A Maturing Church</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button></div></li>
+            <li class="ex-row" data-key="m-sending" data-kind="Marker · Making disciples"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">A Sending Church</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button></div></li>
+          </ul>
+          <p class="ex-sub" id="exs-together">Enjoying life together</p>
+          <ul class="ex-list" role="list" aria-labelledby="exs-together">
+            <li class="ex-row" data-key="m-shepherding" data-kind="Marker · Enjoying life together"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">A Shepherding Church</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button></div></li>
+            <li class="ex-row" data-key="m-community" data-kind="Marker · Enjoying life together"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">A Community Church</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button></div></li>
+            <li class="ex-row" data-key="m-unifying" data-kind="Marker · Enjoying life together"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">A Unifying Church</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button></div></li>
+          </ul>
+        </div>
+        <div class="ex-group">
+          <h3 class="ex-h">Team values</h3>
+          <ul class="ex-list" role="list">
+            <li class="ex-row" data-key="v-dependent" data-kind="Team value"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">Dependent</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button><p class="ex-def">We must first get from Jesus what we need to minister to others. <span class="ex-ref">John 15:5</span></p></div></li>
+            <li class="ex-row" data-key="v-unified" data-kind="Team value"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">Unified</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button><p class="ex-def">We gladly belong to a collaborative body. We follow our leaders, champion our ministry partners, and rely on our teammates. <span class="ex-ref">Ephesians 4:3–6</span></p></div></li>
+            <li class="ex-row" data-key="v-excellent" data-kind="Team value"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">Excellent</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button><p class="ex-def">Excellence honors God and inspires people. We learn and experiment. We feel safe to risk and are hungry for feedback. <span class="ex-ref">Colossians 3:23–24</span></p></div></li>
+            <li class="ex-row" data-key="v-fun" data-kind="Team value"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">Fun</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button><p class="ex-def">The joy of the Lord is our strength, and it should also show on our faces. <span class="ex-ref">Proverbs 17:22</span></p></div></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ex-col">
+        <div class="ex-group">
+          <h3 class="ex-h">Principles for success</h3>
+          <ul class="ex-list" role="list">
+            <li class="ex-row" data-key="p-oneteam" data-kind="Principle for success"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">One team</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button><p class="ex-def">Fight hard to maintain unity in pursuit of a common goal, and honor relationships. <span class="ex-ref">Ephesians 4:1–8</span></p></div></li>
+            <li class="ex-row" data-key="p-flex" data-kind="Principle for success"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">Flexibility over frustration</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button><p class="ex-def">Variables change. Understand the vision and the goals, and with self-control find the best path when they do. <span class="ex-ref">Philippians 2:14–16</span></p></div></li>
+            <li class="ex-row" data-key="p-solution" data-kind="Principle for success"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">Solution-oriented</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button><p class="ex-def">Say yes as often as you can. When you need to say no, help find an appropriate compromise. <span class="ex-ref">Nehemiah 4:15–17; Acts 17:22–34</span></p></div></li>
+            <li class="ex-row" data-key="p-hosts" data-kind="Principle for success"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">Hosts, not guests</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button><p class="ex-def">Put others’ interests above your own. Initiate with new people. Engage everyone with warmth. <span class="ex-ref">Philippians 2:3–4</span></p></div></li>
+            <li class="ex-row" data-key="p-monday" data-kind="Principle for success"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">Monday conversations</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button><p class="ex-def">Take a day to prayerfully process. If it still lingers Monday, go start the conversation. <span class="ex-ref">Hebrews 3:13; Ephesians 4:26–27; Matthew 18:15; Matthew 5:23–24</span></p></div></li>
+          </ul>
+        </div>
+        <div class="ex-group">
+          <h3 class="ex-h">Our objective</h3>
+          <p class="purpose">Our purpose is to call all people to be fully devoted followers of Christ, and our objective is to use our God-given gifts intentionally and with excellence to:</p>
+          <ul class="ex-list" role="list">
+            <li class="ex-row" data-key="o-create" data-kind="Objective"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">Create</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button><p class="ex-def">Environments where the Body of Christ can gather for worship and teaching.</p></div></li>
+            <li class="ex-row" data-key="o-collaborate" data-kind="Objective"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">Collaborate</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button><p class="ex-def">With the communicator, to amplify the gospel, and with others, for a common goal.</p></div></li>
+            <li class="ex-row" data-key="o-cultivate" data-kind="Objective"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">Cultivate</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button><p class="ex-def">Our faith and our skills, developing ourselves and others.</p></div></li>
+            <li class="ex-row" data-key="o-circulate" data-kind="Objective"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">Circulate</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button><p class="ex-def">The Good News, so it encourages people long after it was first shared.</p></div></li>
+          </ul>
+        </div>
+        <div class="ex-group">
+          <h3 class="ex-h">Creative mission and our training</h3>
+          <ul class="ex-list" role="list">
+            <li class="ex-row" data-key="mission" data-kind="Mission"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">Creative mission</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button><p class="ex-def">Reflecting our Creator, we make things that point to Jesus and build up the Church.</p></div></li>
+            <li class="ex-row" data-key="vision" data-kind="Vision"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">Our vision</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button><p class="ex-def">Abiding in Jesus, we are making disciples together.</p></div></li>
+            <li class="ex-row" data-key="w-people" data-kind="Volunteer training"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">People over projects</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button><p class="ex-def">From our volunteer training outline.</p></div></li>
+            <li class="ex-row" data-key="w-trust" data-kind="Volunteer training"><div class="ex-head"><button type="button" class="ex-item"><span class="ex-name">Triangle of trust</span> <span class="ex-count"></span><span class="ex-chev" aria-hidden="true"></span></button><p class="ex-def">Relational, professional, and spiritual.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="index" aria-labelledby="index-h">
+    <h2 id="index-h">The thirty at a glance</h2>
+    <div class="index-cols">
+      <div>
+        <p class="col-label">Abiding in Jesus</p>
+        <ol>
+          <li><span class="n">01</span><a href="#cue-01">Stop and abide. The work will still be there.</a></li>
+          <li><span class="n">02</span><a href="#cue-02">Sundays are won on our knees before they’re won at the console.</a></li>
+          <li><span class="n">03</span><a href="#cue-03">Make room for the Spirit to move, and be ready when He does.</a></li>
+          <li><span class="n">04</span><a href="#cue-04">Handle the Word like it’s the Word.</a></li>
+          <li><span class="n">05</span><a href="#cue-05">Measure Sunday by the conversations down front.</a></li>
+          <li><span class="n">06</span><a href="#cue-06">Serve the moment. Don’t steal it.</a></li>
+          <li><span class="n">07</span><a href="#cue-07">The message is for the booth, too.</a></li>
+          <li><span class="n">08</span><a href="#cue-08">Do the unseen work as worship, and honor the people who do it.</a></li>
+          <li><span class="n">09</span><a href="#cue-09">Joy is part of the job.</a></li>
+          <li><span class="n">10</span><a href="#cue-10">Remember who the real enemy is.</a></li>
+        </ol>
+      </div>
+      <div>
+        <p class="col-label">Making disciples</p>
+        <ol>
+          <li><span class="n">11</span><a href="#cue-11">People over projects, every Sunday.</a></li>
+          <li><span class="n">12</span><a href="#cue-12">Teach the why before the buttons.</a></li>
+          <li><span class="n">13</span><a href="#cue-13">Throw them in. Never throw them under.</a></li>
+          <li><span class="n">14</span><a href="#cue-14">Encourage during the show. You may not get the chance after.</a></li>
+          <li><span class="n">15</span><a href="#cue-15">If it only works when I’m there, it isn’t finished.</a></li>
+          <li><span class="n">16</span><a href="#cue-16">Safe to try, quick to tweak.</a></li>
+          <li><span class="n">17</span><a href="#cue-17">Wins first, then the 2%.</a></li>
+          <li><span class="n">18</span><a href="#cue-18">Own the miss first.</a></li>
+          <li><span class="n">19</span><a href="#cue-19">Make it for the person who isn’t in the room.</a></li>
+          <li><span class="n">20</span><a href="#cue-20">Share the playbook.</a></li>
+        </ol>
+      </div>
+      <div>
+        <p class="col-label">Together</p>
+        <ol>
+          <li><span class="n">21</span><a href="#cue-21">No one is the primary leader. We all move together.</a></li>
+          <li><span class="n">22</span><a href="#cue-22">Clarity is kindness.</a></li>
+          <li><span class="n">23</span><a href="#cue-23">Thursday’s prep buys Sunday’s freedom.</a></li>
+          <li><span class="n">24</span><a href="#cue-24">“How can I help?” beats “not my problem.”</a></li>
+          <li><span class="n">25</span><a href="#cue-25">Be a host, not a guest, down to the breakfast table.</a></li>
+          <li><span class="n">26</span><a href="#cue-26">Sleep on it, pray on it, then go talk.</a></li>
+          <li><span class="n">27</span><a href="#cue-27">Hold your ideas loosely and your people tightly.</a></li>
+          <li><span class="n">28</span><a href="#cue-28">Your voice on comms is the most important piece of gear.</a></li>
+          <li><span class="n">29</span><a href="#cue-29">Let your team see how you’re actually doing.</a></li>
+          <li><span class="n">30</span><a href="#cue-30">Guard the team’s Sabbath so they can keep serving with joy.</a></li>
+        </ol>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PART ONE -->
+  <section class="part p1" id="abiding" aria-labelledby="p1-h">
+    <div class="part-head">
+      <p class="eyebrow">Part one · Cues 01–10</p>
+      <h2 id="p1-h">Abiding in Jesus,</h2>
+      <p class="part-sub">Who we are before we touch a fader.</p>
+      <p class="part-markers">Gospel-Saturated · Praying · Spirit-Led · Bible-Revering</p>
+    </div>
+
+    <article class="lesson" id="cue-01" data-roots="vision v-dependent">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">01</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Stop and abide. The work will still be there.</h3>
+        <p>The tug I felt on day three never went away. There is always one more render, one more email, one more thing to fix before Sunday. Go to Jesus first anyway. Everything we make flows out of that relationship and runs on the strength He gives. If you skip abiding to get ahead, you end up producing church instead of being part of it.</p>
+        <blockquote class="verse"><p>“Whoever abides in me and I in him, he it is that bears much fruit, for apart from me you can do nothing.”</p><cite>John 15:5 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="vision" data-label="Our vision"><span class="kind">Vision</span>Abiding in Jesus</button>
+          <button class="root" type="button" data-root="v-dependent" data-label="Dependent"><span class="kind">Value</span>Dependent</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>My reply to Blake’s “Abide Daily” email on February 17, 2017, my third day on staff.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-02" data-roots="m-praying v-dependent">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">02</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Sundays are won on our knees before they’re won at the console.</h3>
+        <p>In August 2023 I wrote in our W/OFIs that Sundays are a result of being a praying people, and that I was at a loss for all the wins. Prayer is built into our rhythm on purpose. Our Tuesday review opens by praying over what God did last weekend and what He will do in the next one. Fifteen minutes before each service we circle up in the green room and pray for the service and for each other. Guard those minutes, especially on the mornings when the gear is fighting you.</p>
+        <blockquote class="verse"><p>“Unless the LORD builds the house, those who build it labor in vain.”</p><cite>Psalm 127:1 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="m-praying" data-label="A Praying Church"><span class="kind">Marker</span>A Praying Church</button>
+          <button class="root" type="button" data-root="v-dependent" data-label="Dependent"><span class="kind">Value</span>Dependent</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>W/OFIs, August 20, 2023. Our Sunday rhythm, written up for another church in November 2022. Green room prayer in our 2025 WOFIs.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-03" data-roots="m-spirit m-praying p-flex">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">03</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Make room for the Spirit to move, and be ready when He does.</h3>
+        <p>Some of my favorite Sundays didn’t go to plan. When a worship leader feels free to lead what they believe is right, and a teacher feels free to teach what they believe they need to teach, it is usually because production quietly updated the plan and flexed. In February 2024 we prepared a moment with prayer and intentionality, held it loosely, and everyone showed up on the same page. That was Spirit-led. Our readiness is what gives other people the freedom to follow.</p>
+        <blockquote class="verse"><p>“The heart of man plans his way, but the LORD establishes his steps.”</p><cite>Proverbs 16:9 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="m-spirit" data-label="A Spirit-Led Church"><span class="kind">Marker</span>A Spirit-Led Church</button>
+          <button class="root" type="button" data-root="m-praying" data-label="A Praying Church"><span class="kind">Marker</span>A Praying Church</button>
+          <button class="root" type="button" data-root="p-flex" data-label="Flexibility over frustration"><span class="kind">Principle</span>Flexibility over frustration</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>W/OFIs, February 4, 2024. WOFIs, April 27, 2025. “I love when we get to go wherever in the music set,” August 2024.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-04" data-roots="m-bible v-excellent">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">04</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Handle the Word like it’s the Word.</h3>
+        <p>We put Scripture on very large screens in front of thousands of people. A capitalized “Until” in Psalm 71:18, a stray line break in a lower third, the question of “Seven or 7?” are small to a computer and not small to me. We made sentence case for points our standard for a reason. God’s Word deserves the most careful slide we build all week. Proof it, then ask someone else to proof it.</p>
+        <blockquote class="verse"><p>“All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness.”</p><cite>2 Timothy 3:16 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="m-bible" data-label="A Bible-Revering Church"><span class="kind">Marker</span>A Bible-Revering Church</button>
+          <button class="root" type="button" data-root="v-excellent" data-label="Excellent"><span class="kind">Value</span>Excellent</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>W/OFIs, January 2024 and August 2023, when sentence case became our standard. DG/DB, December 2022.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-05" data-roots="m-gospel vision o-circulate">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">05</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Measure Sunday by the conversations down front.</h3>
+        <p>After Christmas Eve 2023, five services in all, the first thing I wanted to tell people was that every service went smooth, the team had a blast, and there were lots of gospel conversations down front afterward. Smooth services and a happy team are gifts. The reason we do any of this is that people would hear the gospel and grow up in Christ. Let that be the scoreboard you care about most.</p>
+        <blockquote class="verse"><p>“Him we proclaim, warning everyone and teaching everyone with all wisdom, that we may present everyone mature in Christ.”</p><cite>Colossians 1:28 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="m-gospel" data-label="A Gospel-Saturated Church"><span class="kind">Marker</span>A Gospel-Saturated Church</button>
+          <button class="root" type="button" data-root="vision" data-label="Our vision"><span class="kind">Vision</span>Making disciples</button>
+          <button class="root" type="button" data-root="o-circulate" data-label="Circulate"><span class="kind">Objective</span>Circulate</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>My email after Christmas Eve, December 26, 2023. W/OFIs, August 2024: “Church. The Blood. The message.”</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-06" data-roots="mission o-collaborate o-create m-gospel">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">06</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Serve the moment. Don’t steal it.</h3>
+        <p>The best looks I’ve seen were barely noticed. Lighting and LED shifted so subtly that the music could lead. Looks changed when the band changed keys, because that was the moment. A camera frame should work as an extension of the worship leader. Before you add anything, ask what the communicator is trying to say and whether this helps them say it. Our creative mission is to make things that point to Jesus. If people leave talking about the lights, we pointed at the wrong thing.</p>
+        <blockquote class="verse"><p>“He must increase, but I must decrease.”</p><cite>John 3:30 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="mission" data-label="Creative mission"><span class="kind">Mission</span>Point to Jesus</button>
+          <button class="root" type="button" data-root="o-collaborate" data-label="Collaborate"><span class="kind">Objective</span>Collaborate</button>
+          <button class="root" type="button" data-root="o-create" data-label="Create"><span class="kind">Objective</span>Create</button>
+          <button class="root" type="button" data-root="m-gospel" data-label="A Gospel-Saturated Church"><span class="kind">Marker</span>A Gospel-Saturated Church</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>DG/DB, October 10, 2022. W/OFIs, September 2024. Switcher training, January 2021. Coaching a communicator on photos in August 2019: “What are you trying to communicate?”</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-07" data-roots="m-maturing m-bible v-dependent o-cultivate">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">07</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">The message is for the booth, too.</h3>
+        <p>It is easy to hear a sermon as a list of cues: lower third, slide, camera two. Some of the most faithful people I’ve served with worship while they work. I’ve watched a stage manager worship between calls, a safety volunteer bow their head in prayer with the congregation, and a director write personal takeaways into the production notes. I’ve had messages land so hard they went on repeat for me. Don’t let the booth turn into a bunker. The Word is for you too.</p>
+        <blockquote class="verse"><p>“But be doers of the word, and not hearers only, deceiving yourselves.”</p><cite>James 1:22 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="m-maturing" data-label="A Maturing Church"><span class="kind">Marker</span>A Maturing Church</button>
+          <button class="root" type="button" data-root="m-bible" data-label="A Bible-Revering Church"><span class="kind">Marker</span>A Bible-Revering Church</button>
+          <button class="root" type="button" data-root="v-dependent" data-label="Dependent"><span class="kind">Value</span>Dependent</button>
+          <button class="root" type="button" data-root="o-cultivate" data-label="Cultivate"><span class="kind">Objective</span>Cultivate</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>W/OFIs, October 2, 2024: “The message will be on repeat for me.” W/OFIs, July 2024. WOFIs, June 2025.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-08" data-roots="v-excellent p-hosts">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">08</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Do the unseen work as worship, and honor the people who do it.</h3>
+        <p>My first Saturday on staff, I was cleaning lumber out of back of house. Most of production looks like that: swapping out expired communion cups, finding a bulb that matches the others, walking the room with a trash bag, quietly fixing five problems nobody in the room ever knows about. God sees all of it. So say thank you out loud to the audio team that is easy to take for granted, to facilities for the unclogged green room sink, and to the volunteers who bring breakfast.</p>
+        <blockquote class="verse"><p>“Whatever you do, work heartily, as for the Lord and not for men.”</p><cite>Colossians 3:23 (ESV); see also Matthew 10:42</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="v-excellent" data-label="Excellent"><span class="kind">Value</span>Excellent</button>
+          <button class="root" type="button" data-root="p-hosts" data-label="Hosts, not guests"><span class="kind">Principle</span>Hosts, not guests</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>February 18, 2017, back of house. Blake’s “Ordinary faithfulness in the smallest tasks,” August 2019. W/OFIs, November 2023 and July–August 2024. WOFIs, 2025.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-09" data-roots="v-fun m-community">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">09</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Joy is part of the job.</h3>
+        <p>One of my favorite notes said run-through was light and fun, with healthy communication between production and worship, like a sports team. Laughing together is normal here. I have bragged about running lyrics from my iPad. I have been unreasonably happy about writing my initials in a shared doc. We officially cleared TA’s white shirt for the rotation. A tense booth makes a tense room, and a joyful team serves longer and better. You can do great work and have a great time doing it.</p>
+        <blockquote class="verse"><p>“For the joy of the LORD is your strength.”</p><cite>Nehemiah 8:10 (ESV); see also Proverbs 17:22</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="v-fun" data-label="Fun"><span class="kind">Value</span>Fun</button>
+          <button class="root" type="button" data-root="m-community" data-label="A Community Church"><span class="kind">Marker</span>A Community Church</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>DG/DB, January 30, 2023. W/OFIs, February 2024. WOFIs, May and June 2025.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-10" data-roots="v-unified m-unifying">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">10</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Remember who the real enemy is.</h3>
+        <p>When a plug-in freezes two weeks in a row, or a change lands at 8:06 AM, it is tempting to aim the frustration at whoever is on the other end of comms. In June 2025 I wrote into our WOFIs that we have an enemy who is looking for chances to tank the moment, the day, our spirits, and our relationships. Support each other and be patient. The person on headset is your teammate. Fight for that relationship.</p>
+        <blockquote class="verse"><p>“For we do not wrestle against flesh and blood.”</p><cite>Ephesians 6:12 (ESV); see also 1 Peter 5:8</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="v-unified" data-label="Unified"><span class="kind">Value</span>Unified</button>
+          <button class="root" type="button" data-root="m-unifying" data-label="A Unifying Church"><span class="kind">Marker</span>A Unifying Church</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>WOFIs, June 1, 2025. W/OFIs, September 2024.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- PART TWO -->
+  <section class="part p2" id="making-disciples" aria-labelledby="p2-h">
+    <div class="part-head">
+      <p class="eyebrow">Part two · Cues 11–20</p>
+      <h2 id="p2-h">we are making disciples</h2>
+      <p class="part-sub">How we raise up the people beside us and the ones coming next.</p>
+      <p class="part-markers">Missional · Maturing · Sending</p>
+    </div>
+
+    <article class="lesson" id="cue-11" data-roots="m-shepherding p-hosts w-people">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">11</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">People over projects, every Sunday.</h3>
+        <p>We put it right in our training outline: people over projects. Services end. The people we serve with are eternal. I’ve learned to pray with volunteers walking through hard things at home, to say “totally understand, be free” when someone has to drop, and to promise there is never any pressure to say yes. Keep asking how well you know your volunteers, and reach out before Sunday morning. Every so often, sit in their seat and run camera or lyrics yourself.</p>
+        <blockquote class="verse"><p>“In humility count others more significant than yourselves.”</p><cite>Philippians 2:3 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="m-shepherding" data-label="A Shepherding Church"><span class="kind">Marker</span>A Shepherding Church</button>
+          <button class="root" type="button" data-root="p-hosts" data-label="Hosts, not guests"><span class="kind">Principle</span>Hosts, not guests</button>
+          <button class="root" type="button" data-root="w-people" data-label="People over projects"><span class="kind">Training</span>People over projects</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>Switcher training, January 2021. Emails to volunteers, 2018–2019. W/OFIs, August and September 2024: “How well do we know our volunteers?”</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-12" data-roots="m-missional o-cultivate">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">12</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Teach the why before the buttons.</h3>
+        <p>Our switcher training started with purpose and posture before it ever got to shot types or what each button does. New volunteers sat through an Objectives &amp; Values class before they ran anything. After one class, a volunteer wrote back that our values challenged them to be a better employee at work too. That’s the goal. Anyone can learn the buttons on a Sunday. Culture has to be handed down on purpose, and it follows people into their Monday.</p>
+        <blockquote class="verse"><p>“Teaching them to observe all that I have commanded you.”</p><cite>Matthew 28:20 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="m-missional" data-label="A Missional Church"><span class="kind">Marker</span>A Missional Church</button>
+          <button class="root" type="button" data-root="o-cultivate" data-label="Cultivate"><span class="kind">Objective</span>Cultivate</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>Objectives &amp; Values class, February 2020. Switcher training, January 2021. Shadow onboarding, September 2022. Refreshing the one-pager for onboarding, June 2024.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-13" data-roots="v-excellent m-maturing">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">13</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Throw them in. Never throw them under.</h3>
+        <p>People grow when the shot is live. Let operators feel the pressure of their shot going out, because even if a bad one goes out, they will learn. Don’t let a trainee sit unused for two songs. Set people up before you put them in, though. I once watched a lyrics op go solo for the first time without knowing they would be alone, and they weren’t ready. That one was on us. Give real reps, clear expectations, and someone on comms who has their back.</p>
+        <blockquote class="verse"><p>“For if they fall, one will lift up his fellow.”</p><cite>Ecclesiastes 4:10 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="v-excellent" data-label="Excellent"><span class="kind">Value</span>Excellent</button>
+          <button class="root" type="button" data-root="m-maturing" data-label="A Maturing Church"><span class="kind">Marker</span>A Maturing Church</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>Switcher training, January 2021. DG/DB, December 11, 2022. W/OFIs, August 2024, when a new lyrics op shadowed in the morning and ran the 4 PM alone.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-14" data-roots="p-monday">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">14</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Encourage during the show. You may not get the chance after.</h3>
+        <p>This came straight from our camera training: encourage your operators while you are live, because you likely won’t get a chance afterward. A quick “great shot, three” on comms lands in the moment and builds trust for the next cue. The same is true in the green room and the hallway. If you are grateful for someone, say it today.</p>
+        <blockquote class="verse"><p>“But exhort one another every day, as long as it is called ‘today.’”</p><cite>Hebrews 3:13 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="p-monday" data-label="Monday conversations"><span class="kind">Principle</span>Monday conversations</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>Switcher training, January 2021. WOFIs, 2025: “Way. To. Go.”</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-15" data-roots="m-sending o-cultivate">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">15</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">If it only works when I’m there, it isn’t finished.</h3>
+        <p>One of the best wins I ever wrote down was that our volunteers ran the entire rehearsal without me. That is the job. Train the next person, write the process down, name files so anyone can find them quickly, keep the stage manager sheets current, and let someone else draft the response and get the credit. Aim to multiply yourself.</p>
+        <blockquote class="verse"><p>“Entrust to faithful men, who will be able to teach others also.”</p><cite>2 Timothy 2:2 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="m-sending" data-label="A Sending Church"><span class="kind">Marker</span>A Sending Church</button>
+          <button class="root" type="button" data-root="o-cultivate" data-label="Cultivate"><span class="kind">Objective</span>Cultivate</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>My notes from the Uncommon weekend, November 2022. DG/DB, December 2022. W/OFIs, July 2024. The Loft PA project, June 2026.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-16" data-roots="v-excellent m-maturing">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">16</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Safe to try, quick to tweak.</h3>
+        <p>In 2022 I thanked our elders and teaching pastors for an “it’s safe to try” mentality. That posture produced some of our best work: five vocalists on a Sunday, playing the opener, new tools for Easter. At The Porch in 2024 we celebrated that we discussed, we tried, and the things we tried weren’t terrible. Then we made 2% adjustments. Try things, debrief honestly, adjust, and never punish the attempt.</p>
+        <blockquote class="verse"><p>“He who observes the wind will not sow, and he who regards the clouds will not reap.”</p><cite>Ecclesiastes 11:4 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="v-excellent" data-label="Excellent"><span class="kind">Value</span>Excellent</button>
+          <button class="root" type="button" data-root="m-maturing" data-label="A Maturing Church"><span class="kind">Marker</span>A Maturing Church</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>DG/DB, October 10, 2022. W/OFIs, December 2023 and January 2024. The Porch W/OFIs, October 3, 2024.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-17" data-roots="p-monday v-excellent">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">17</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Wins first, then the 2%.</h3>
+        <p>In 2023 we renamed “Did Goods / Do Betters” to “Wins / Opportunities for Improvement,” and the order matters. Start with what God did and what the team did well. Some weeks it got hard to name new wins because we had come so far, and I didn’t want us to forget that. Then talk about the last 2% we rarely get to fix during a weekend. As one note in our WOFIs doc put it, the list is there to make us better and to celebrate what we do great. It is never meant to create fear.</p>
+        <blockquote class="verse"><p>“And let us consider how to stir up one another to love and good works.”</p><cite>Hebrews 10:24 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="p-monday" data-label="Monday conversations"><span class="kind">Principle</span>Monday conversations</button>
+          <button class="root" type="button" data-root="v-excellent" data-label="Excellent"><span class="kind">Value</span>Excellent</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>Renaming DG/DB, January 31, 2023. W/OFIs, July 22 and September 17, 2024. WOFIs, April 2025.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-18" data-roots="v-excellent p-monday">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">18</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Own the miss first.</h3>
+        <p>Plenty of my OFIs were about me. I forgot to remind people to sit at both services. I forgot we had agreed on IMAG off. I should have spent more time with TA figuring out an announcement moment. Back in 2018, an edit I made during playback caused a hiccup on screen. When the leader names their own miss first, it becomes safe for everyone else to name theirs, and the fix happens faster.</p>
+        <blockquote class="verse"><p>“Whoever conceals his transgressions will not prosper, but he who confesses and forsakes them will obtain mercy.”</p><cite>Proverbs 28:13 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="v-excellent" data-label="Excellent"><span class="kind">Value</span>Excellent</button>
+          <button class="root" type="button" data-root="p-monday" data-label="Monday conversations"><span class="kind">Principle</span>Monday conversations</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>The year-end giving video, December 2018. W/OFIs, March 2023 and October 2024. WOFIs, June 2025.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-19" data-roots="m-missional o-circulate">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">19</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Make it for the person who isn’t in the room.</h3>
+        <p>Our training said it plainly: our job is to give people who aren’t in the room the most engaging experience possible. That might be a family in overflow, a guest in the Town Center, someone watching from home, or someone who finds a message years from now. Some messages deserve to be pinned on the website and played in new member classes. We circulate the good news so it keeps encouraging people long after it was first shared.</p>
+        <blockquote class="verse"><p>“Tell to the coming generation the glorious deeds of the LORD.”</p><cite>Psalm 78:4 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="m-missional" data-label="A Missional Church"><span class="kind">Marker</span>A Missional Church</button>
+          <button class="root" type="button" data-root="o-circulate" data-label="Circulate"><span class="kind">Objective</span>Circulate</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>Switcher training, January 2021. W/OFIs, August 2024. Overflow and Town Center notes, 2024–2025.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-20" data-roots="m-sending m-unifying">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">20</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Share the playbook.</h3>
+        <p>For years, churches have asked how we run a Sunday, how we plan CLC, or how to step into a head-of-production role. I’ve learned to answer generously: send the schedule, share the process, offer the job description, set up a lunch. Be honest that we are still figuring a lot of it out. Learn just as humbly from them. We have visited other churches to see their systems and come home better. It is one Kingdom.</p>
+        <blockquote class="verse"><p>“I planted, Apollos watered, but God gave the growth.”</p><cite>1 Corinthians 3:6 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="m-sending" data-label="A Sending Church"><span class="kind">Marker</span>A Sending Church</button>
+          <button class="root" type="button" data-root="m-unifying" data-label="A Unifying Church"><span class="kind">Marker</span>A Unifying Church</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>Emails with other churches, 2020–2026, including our Sunday rhythm in November 2022 and CLC planning questions in May 2022. Benchmarking visits, 2026.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- PART THREE -->
+  <section class="part p3" id="together" aria-labelledby="p3-h">
+    <div class="part-head">
+      <p class="eyebrow">Part three · Cues 21–30</p>
+      <h2 id="p3-h">together.</h2>
+      <p class="part-sub">How we live and lead as one team.</p>
+      <p class="part-markers">Shepherding · Community · Unifying</p>
+    </div>
+
+    <article class="lesson" id="cue-21" data-roots="p-oneteam v-unified m-unifying">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">21</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">No one is the primary leader. We all move together.</h3>
+        <p>I wrote that to our lyrics ops in 2025: listen to MD talkback as a guide, because no one is the primary leader and we all move together. It is true of the whole room. We have thanked the band for being teammates in moments that could easily have been frustrating. Teaching, Comms, Production, and Worship have pulled off weekends with flawless communication. One Sunday our video team was a high schooler, a corporate lawyer, a programmer, and a schoolteacher. One body, many parts.</p>
+        <blockquote class="verse"><p>“For just as the body is one and has many members, and all the members of the body, though many, are one body, so it is with Christ.”</p><cite>1 Corinthians 12:12 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="p-oneteam" data-label="One team"><span class="kind">Principle</span>One team</button>
+          <button class="root" type="button" data-root="v-unified" data-label="Unified"><span class="kind">Value</span>Unified</button>
+          <button class="root" type="button" data-root="m-unifying" data-label="A Unifying Church"><span class="kind">Marker</span>A Unifying Church</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>WOFIs, April, May, and June 2025. DG/DB, January 30, 2023.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-22" data-roots="v-unified p-solution">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">22</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Clarity is kindness.</h3>
+        <p>Most of the Sunday stress I’ve seen traces back to someone not knowing something. Changes made in a side conversation turn into a telephone game, so loop in the producer. A pastor who calls in the morning to process and texts to confirm the order gives the whole team confidence. Go get the vision early, too, because the people we serve won’t always say what they are picturing unless you ask. We once learned about an opening illustration at 6 AM on a Sunday and pulled it off, and I still wished we had known sooner. Know who owns what. Sunday works when the right people are in the right roles. Clarity is kindness. Don’t forget to be kind while being clear.</p>
+        <blockquote class="verse"><p>“For God is not a God of confusion but of peace.”</p><cite>1 Corinthians 14:33 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="v-unified" data-label="Unified"><span class="kind">Value</span>Unified</button>
+          <button class="root" type="button" data-root="p-solution" data-label="Solution-oriented"><span class="kind">Principle</span>Solution-oriented</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>Pre-production planning notes, May 2022. DG/DB, October 10, 2022. W/OFIs, April 2023 and October 2024. WOFIs, May 2025: “We built the wall on Sunday, with the right people in the necessary role.”</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-23" data-roots="p-flex v-excellent">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">23</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Thursday’s prep buys Sunday’s freedom.</h3>
+        <p>Songs in PCO by noon Thursday. Lyrics, bumper, graphics, and lighting reviewed by the end of the day Thursday. A full run-through on Sunday morning as though it’s live. Run the band through what they would do off click, without ears. Practice communion transitions like it’s the real thing. In July 2024 I wrote that our planning and prep were so dialed that it was easy to be flexible, and that I didn’t want to forget it. Plan where you can plan, and stay flexible where you need to.</p>
+        <blockquote class="verse"><p>“The plans of the diligent lead surely to abundance, but everyone who is hasty comes only to poverty.”</p><cite>Proverbs 21:5 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="p-flex" data-label="Flexibility over frustration"><span class="kind">Principle</span>Flexibility over frustration</button>
+          <button class="root" type="button" data-root="v-excellent" data-label="Excellent"><span class="kind">Value</span>Excellent</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>Our Sunday rhythm, November 2022. W/OFIs, July 22, 2024. WOFIs, June 2025.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-24" data-roots="p-solution p-oneteam">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">24</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">“How can I help?” beats “not my problem.”</h3>
+        <p>That is a reminder I wrote to myself in our WOFIs. Sunday has no department lines. I’ve watched an audio engineer get pulled to run content at 8:06 AM, a director take an Uber to church at 5 AM because their car was blocked in, a camera op jump to where the bigger need was, and a teammate call IHOP when a breakfast volunteer canceled. Say yes as often as you can. When you have to say no, help find the next-best answer.</p>
+        <blockquote class="verse"><p>“Bear one another’s burdens, and so fulfill the law of Christ.”</p><cite>Galatians 6:2 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="p-solution" data-label="Solution-oriented"><span class="kind">Principle</span>Solution-oriented</button>
+          <button class="root" type="button" data-root="p-oneteam" data-label="One team"><span class="kind">Principle</span>One team</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>WOFIs, June 2025. My notes from the Uncommon weekend, November 2022. W/OFIs, February 2024. WOFIs, April 2025.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-25" data-roots="p-hosts m-community o-create">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">25</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Be a host, not a guest, down to the breakfast table.</h3>
+        <p>Hospitality is ministry. Take the food out of the bags and lay it out with intention. Ask a guest speaker whether family is coming and whether they would like seats saved. Clean up after yourself instead of leaving it for the ASM. Reset the room for the next team, and introduce yourself to new people. The green room shapes how speakers, musicians, and volunteers feel about serving here. It is familial by nature, so keep it that way.</p>
+        <blockquote class="verse"><p>“Show hospitality to one another without grumbling.”</p><cite>1 Peter 4:9 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="p-hosts" data-label="Hosts, not guests"><span class="kind">Principle</span>Hosts, not guests</button>
+          <button class="root" type="button" data-root="m-community" data-label="A Community Church"><span class="kind">Marker</span>A Community Church</button>
+          <button class="root" type="button" data-root="o-create" data-label="Create"><span class="kind">Objective</span>Create</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>WOFIs, May and June 2025. Our guest speaker hosting document, 2026. W/OFIs, August 2024.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-26" data-roots="p-monday v-unified m-praying">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">26</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Sleep on it, pray on it, then go talk.</h3>
+        <p>Monday conversations is one of my favorite things we believe. If something frustrates you on Sunday, take a day and process it in prayer. If it is still there on Monday, go to the person directly. I’ve had seasons where I carried a tension too long instead of bringing it to the people who could help, and it cost me more than the conversation would have. Ambiguity doesn’t fix itself. Bring it up early and kindly.</p>
+        <blockquote class="verse"><p>“Do not let the sun go down on your anger, and give no opportunity to the devil.”</p><cite>Ephesians 4:26–27 (ESV); see also Matthew 5:23–24</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="p-monday" data-label="Monday conversations"><span class="kind">Principle</span>Monday conversations</button>
+          <button class="root" type="button" data-root="v-unified" data-label="Unified"><span class="kind">Value</span>Unified</button>
+          <button class="root" type="button" data-root="m-praying" data-label="A Praying Church"><span class="kind">Marker</span>A Praying Church</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>Our team values since 2017. Conversations with my leaders, 2026.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-27" data-roots="v-unified o-collaborate">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">27</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Hold your ideas loosely and your people tightly.</h3>
+        <p>Creative work in a church is shared work. Sometimes a version of your idea makes it into the room instead of the original, and learning to be genuinely proud of that version is part of growing as a leader. When a ministry has a vision for how it is represented, help them feel proud of the result and follow their lead. I’ve had to admit others were right about a response song, and a reworked hero graphic turned out to be a good compromise. Champion other people’s ideas like they are your own.</p>
+        <blockquote class="verse"><p>“Outdo one another in showing honor.”</p><cite>Romans 12:10 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="v-unified" data-label="Unified"><span class="kind">Value</span>Unified</button>
+          <button class="root" type="button" data-root="o-collaborate" data-label="Collaborate"><span class="kind">Objective</span>Collaborate</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>W/OFIs, August 2023. Creative direction notes to ministry partners, May 2026. Feedback I’ve written for leaders I care about, 2026.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-28" data-roots="p-flex v-fun">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">28</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Your voice on comms is the most important piece of gear.</h3>
+        <p>When something breaks live, the room takes its cue from whoever is talking on headset. When the plug-ins froze one Sunday, Blake’s response was “technology isn’t perfect,” and the whole team exhaled. A team that does a little extra work with a calm disposition and a positive attitude can absorb almost anything. Our training put it simply: patience, encouragement, and clarity are key. Keep it calm, keep it short, and keep it kind.</p>
+        <blockquote class="verse"><p>“A soft answer turns away wrath, but a harsh word stirs up anger.”</p><cite>Proverbs 15:1 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="p-flex" data-label="Flexibility over frustration"><span class="kind">Principle</span>Flexibility over frustration</button>
+          <button class="root" type="button" data-root="v-fun" data-label="Fun"><span class="kind">Value</span>Fun</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>W/OFIs, September 2024 and January 2024. Switcher training, January 2021.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-29" data-roots="v-dependent m-maturing w-trust">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">29</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Let your team see how you’re actually doing.</h3>
+        <p>In 2024 I was challenged to share how I feel and to pay attention to how I come across with the team. That weekend I tried, and I wrote it into our W/OFIs so I would keep trying. Some years in this role felt like drinking from a fire hydrant. Your team can’t follow a leader they can’t read. Trust grows on three sides, relational, professional, and spiritual. Lead yourself first, ask for help, and let people in.</p>
+        <blockquote class="verse"><p>“My grace is sufficient for you, for my power is made perfect in weakness.”</p><cite>2 Corinthians 12:9 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="v-dependent" data-label="Dependent"><span class="kind">Value</span>Dependent</button>
+          <button class="root" type="button" data-root="m-maturing" data-label="A Maturing Church"><span class="kind">Marker</span>A Maturing Church</button>
+          <button class="root" type="button" data-root="w-trust" data-label="Triangle of trust"><span class="kind">Training</span>Triangle of trust</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>W/OFIs, August 20, 2024. My first years as Creative Director, 2025–2026. Switcher training, January 2021.</p>
+      </div>
+    </article>
+
+    <article class="lesson" id="cue-30" data-roots="m-shepherding m-community">
+      <div class="cue"><span class="cue-label">Cue</span><span class="cue-num">30</span></div>
+      <div class="lesson-main">
+        <h3 class="lesson-title">Guard the team’s Sabbath so they can keep serving with joy.</h3>
+        <p>Our auditorium team takes Friday and Saturday off for a reason. Sunday call times start around 6:30 AM, and big weekends stack up fast. I’ve seen what it costs when people work a full conference and then a full Sunday, and I’ve seen our elders encourage a teaching pastor to take a Sunday off. We can be all in on a vision and still be clear about what our team will carry. Don’t make the producer also own breakfast. Protect your people’s rest so they can keep saying yes for years.</p>
+        <blockquote class="verse"><p>“Come away by yourselves to a desolate place and rest a while.”</p><cite>Mark 6:31 (ESV)</cite></blockquote>
+        <div class="roots"><span class="roots-label">Rooted in</span>
+          <button class="root" type="button" data-root="m-shepherding" data-label="A Shepherding Church"><span class="kind">Marker</span>A Shepherding Church</button>
+          <button class="root" type="button" data-root="m-community" data-label="A Community Church"><span class="kind">Marker</span>A Community Church</button>
+        </div>
+        <p class="learned"><span class="learned-label">Where I learned it</span>Our Sunday rhythm, November 2022. My notes from the Uncommon weekend, November 2022. DG/DB, December 2022. Serving as a venue for Gather25, February 2025.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="close" aria-labelledby="close-h">
+    <p class="eyebrow">Pass it on</p>
+    <h2 id="close-h">For whoever comes next</h2>
+    <p>Our W/OFIs started as a weekly email and turned into a shared document where everyone signs their initials. I hope this list works the same way. If you are new to the production team, read one of these each week before Sunday. If you lead, push back on them, add your own, and pass them on.</p>
+    <p>Abiding in Jesus, we are making disciples together.</p>
+    <p class="signoff">AVH</p>
+  </section>
+
+  </main>
+
+  <footer class="sources">
+    <p>Drawn from my Watermark email from February 2017 to November 2026; our DG/DB and W/OFI emails from 2022 to 2024; the shared WOFIs_2025 document, including every item marked AVH; the Production Objectives &amp; Values from 2018, 2020, and the 2024 revision; our switcher and volunteer training outlines; and files on my desktop.</p>
+    <p>Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.</p>
+  </footer>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var doc = document;
+  var explorer = doc.getElementById('explorer');
+  if (!explorer) return;
+
+  var reduceMq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  function motion(){ return reduceMq && reduceMq.matches ? 'auto' : 'smooth'; }
+  function each(list, fn){ Array.prototype.forEach.call(list, fn); }
+  function make(tag, cls, text){
+    var n = doc.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  function sr(text){ return make('span', 'sr', text); }
+
+  /* 1. The thirty, in cue order */
+  var BY_NUM = {}, BY_KEY = {};
+  each(doc.querySelectorAll('article.lesson'), function(art){
+    var citeEl = art.querySelector('.verse cite');
+    var cite = citeEl ? citeEl.textContent : '';
+    var cut = cite.indexOf(' (');
+    var L = {
+      el: art,
+      id: art.id,
+      num: art.querySelector('.cue-num').textContent.trim(),
+      title: art.querySelector('.lesson-title').textContent.trim(),
+      roots: (art.getAttribute('data-roots') || '').split(/\s+/).filter(Boolean),
+      cite: (cut > -1 ? cite.slice(0, cut) : cite).trim(),
+      body: art.querySelector('.lesson-main > p:not(.learned)'),
+      verse: art.querySelector('.lesson-main > blockquote.verse'),
+      learned: art.querySelector('.lesson-main > p.learned')
+    };
+    BY_NUM[L.num] = L;
+    L.roots.forEach(function(k){ (BY_KEY[k] = BY_KEY[k] || []).push(L); });
+  });
+
+  /* 2. The 27 foundation rows */
+  var ITEMS = {}, BTNS = [];
+  each(explorer.querySelectorAll('.ex-row'), function(row){
+    var key = row.getAttribute('data-key');
+    var btn = row.querySelector('.ex-item');
+    var lessons = BY_KEY[key] || [];
+    var count = row.querySelector('.ex-count');
+    count.textContent = '';
+    count.appendChild(sr(', '));
+    count.appendChild(doc.createTextNode(lessons.length + (lessons.length === 1 ? ' lesson' : ' lessons')));
+    btn.setAttribute('aria-expanded', 'false');
+    ITEMS[key] = {
+      key: key, row: row, btn: btn, lessons: lessons,
+      name: row.querySelector('.ex-name').textContent.trim(),
+      kind: row.getAttribute('data-kind') || '',
+      def: row.querySelector('.ex-def')
+    };
+    BTNS.push(btn);
+  });
+
+  /* 3. The one drawer. It is moved into whichever row is open. */
+  var panel = make('div', 'ex-panel');
+  panel.id = 'ex-panel';
+  panel.setAttribute('role', 'region');
+  panel.hidden = true;
+  explorer.appendChild(panel);
+  var current = null;
+
+  function countLine(lessons){
+    var n = lessons.length;
+    if (!n) return 'None of the thirty rest on this yet.';
+    return n + ' of the thirty ' + (n === 1 ? 'rests' : 'rest') + ' on this · ' +
+      (n === 1 ? 'Cue ' : 'Cues ') + lessons.map(function(L){ return L.num; }).join(', ');
+  }
+
+  function lessonDetails(L){
+    var d = make('details', 'ex-lesson');
+    d.setAttribute('data-cue', L.num);
+    var s = make('summary');
+    var line = make('span', 'ex-sum');
+    var num = make('span', 'ex-num');
+    num.appendChild(sr('Cue '));
+    num.appendChild(doc.createTextNode(L.num));
+    var ttl = make('span', 'ex-ttl', L.title + ' ');
+    if (L.cite) ttl.appendChild(make('span', 'ex-cite', L.cite));
+    var chev = make('span', 'ex-chev');
+    chev.setAttribute('aria-hidden', 'true');
+    line.appendChild(num); line.appendChild(ttl); line.appendChild(chev);
+    s.appendChild(line);
+    d.appendChild(s);
+    d.appendChild(make('div', 'ex-body'));
+    return d;
+  }
+
+  function render(item, keepCue){
+    panel.textContent = '';
+    panel.setAttribute('aria-label', 'Lessons rooted in ' + item.name);
+    panel.appendChild(make('p', 'ex-meta', countLine(item.lessons)));
+    if (item.lessons.length){
+      var ol = make('ol', 'ex-lessons');
+      ol.setAttribute('role', 'list');
+      item.lessons.forEach(function(L){
+        var d = lessonDetails(L);
+        if (item.lessons.length === 1 || L.num === keepCue){ fill(d, item.key); d.open = true; }
+        var li = make('li');
+        li.appendChild(d);
+        ol.appendChild(li);
+      });
+      panel.appendChild(ol);
+    }
+    var close = make('button', 'ex-close', 'Close ' + item.name);
+    close.type = 'button';
+    panel.appendChild(close);
+  }
+
+  function fill(d, fromKey, inNote){
+    var body = d.querySelector('.ex-body');
+    if (body.firstChild) return;
+    var L = BY_NUM[d.getAttribute('data-cue')];
+    if (!L) return;
+    if (L.body) body.appendChild(L.body.cloneNode(true));
+    if (L.verse) body.appendChild(L.verse.cloneNode(true));
+    var others = inNote ? [] : L.roots.filter(function(k){ return k !== fromKey && ITEMS[k]; });
+    if (others.length){
+      var also = make('div', 'roots ex-also');
+      also.appendChild(make('span', 'roots-label', 'Also rooted in'));
+      others.forEach(function(k){
+        var kind = L.el.querySelector('.roots .root[data-root="' + k + '"] .kind');
+        var b = make('button', 'root ex-hop');
+        b.type = 'button';
+        b.setAttribute('data-switch', k);
+        b.setAttribute('data-cue', L.num);
+        b.appendChild(sr('Open '));
+        if (kind){ b.appendChild(make('span', 'kind', kind.textContent)); b.appendChild(sr(': ')); }
+        b.appendChild(doc.createTextNode(ITEMS[k].name));
+        var arrow = make('span', 'hop', '→');
+        arrow.setAttribute('aria-hidden', 'true');
+        b.appendChild(arrow);
+        also.appendChild(b);
+      });
+      body.appendChild(also);
+    }
+    if (L.learned) body.appendChild(L.learned.cloneNode(true));
+    var foot = make('p', 'ex-foot');
+    var go = make('a', 'ex-goto', 'Read Cue ' + L.num + ' in the full list');
+    go.href = '#' + L.id;
+    var shut = make('button', 'ex-fold', 'Close Cue ' + L.num);
+    shut.type = 'button';
+    foot.appendChild(go); foot.appendChild(shut);
+    body.appendChild(foot);
+  }
+
+  function setClosed(item){
+    item.row.classList.remove('is-open');
+    item.btn.setAttribute('aria-expanded', 'false');
+    item.btn.removeAttribute('aria-controls');
+  }
+
+  function open(key, opts){
+    opts = opts || {};
+    var item = ITEMS[key];
+    if (!item) return;
+    var hadFocus = panel.contains(doc.activeElement);
+    var y0 = item.row.getBoundingClientRect().top;
+    if (current) setClosed(current);
+    render(item, opts.cue);
+    item.row.appendChild(panel);
+    panel.hidden = false;
+    item.row.classList.add('is-open');
+    item.btn.setAttribute('aria-expanded', 'true');
+    item.btn.setAttribute('aria-controls', 'ex-panel');
+    current = item;
+    if (opts.jump){
+      item.row.scrollIntoView({ block: 'start', behavior: motion() });
+      item.btn.focus({ preventScroll: true });
+      return;
+    }
+    var dy = item.row.getBoundingClientRect().top - y0;
+    if (dy) window.scrollBy(0, dy);
+    if (hadFocus) item.btn.focus({ preventScroll: true });
+    if (panel.getBoundingClientRect().top > window.innerHeight * 0.72){
+      item.row.scrollIntoView({ block: 'start', behavior: motion() });
+    }
+  }
+
+  function fold(focusRow){
+    if (!current) return;
+    var item = current;
+    var hadFocus = focusRow || panel.contains(doc.activeElement);
+    setClosed(item);
+    panel.hidden = true;
+    current = null;
+    if (item.row.getBoundingClientRect().top < 0) item.row.scrollIntoView({ block: 'start' });
+    if (hadFocus) item.btn.focus({ preventScroll: true });
+  }
+
+  function closeLesson(d){
+    var s = d.querySelector('summary');
+    d.open = false;
+    d.querySelector('.ex-body').textContent = '';
+    if (s.getBoundingClientRect().top < 0) s.scrollIntoView({ block: 'start' });
+    s.focus({ preventScroll: true });
+  }
+
+  /* 4. A note under each lesson's Rooted-in pills */
+  var OPENER = {}, lastNote = null;
+  each(doc.querySelectorAll('article.lesson'), function(art){
+    var roots = art.querySelector('.roots');
+    if (!roots) return;
+    var note = make('div', 'root-note');
+    note.id = 'note-' + art.id;
+    note.hidden = true;
+    roots.parentNode.insertBefore(note, roots.nextSibling);
+    each(roots.querySelectorAll('.root'), function(b){
+      b.setAttribute('aria-expanded', 'false');
+      var kind = b.querySelector('.kind');
+      if (kind) b.insertBefore(sr(': '), kind.nextSibling);
+    });
+  });
+
+  function fillNote(note, item, art){
+    note.textContent = '';
+    note.appendChild(make('p', 'note-kind', item.kind));
+    note.appendChild(make('p', 'note-name', item.name));
+    if (item.def) note.appendChild(item.def.cloneNode(true));
+    var n = item.lessons.length;
+    note.appendChild(make('p', 'note-count', n + ' of the thirty ' + (n === 1 ? 'rests' : 'rest') + ' on this.'));
+    var others = item.lessons.filter(function(L){ return L.el !== art; });
+    if (others.length){
+      note.appendChild(make('p', 'note-sub', 'Other lessons that rest on it'));
+      var ol = make('ol', 'ex-lessons');
+      ol.setAttribute('role', 'list');
+      others.forEach(function(L){
+        var li = make('li');
+        li.appendChild(lessonDetails(L));
+        ol.appendChild(li);
+      });
+      note.appendChild(ol);
+    } else {
+      note.appendChild(make('p', 'note-count', 'This is the only lesson that rests on it.'));
+    }
+    var c = make('button', 'note-close', 'Close');
+    c.type = 'button';
+    c.appendChild(sr(' the note on ' + item.name));
+    note.appendChild(c);
+  }
+
+  function toggleNote(pill){
+    var art = pill.closest('article.lesson');
+    var note = art ? doc.getElementById('note-' + art.id) : null;
+    var item = ITEMS[pill.getAttribute('data-root')];
+    if (!note || !item) return;
+    if (!note.hidden && OPENER[note.id] === pill){ closeNote(note, false); return; }
+    fillNote(note, item, art);
+    note.hidden = false;
+    OPENER[note.id] = pill;
+    lastNote = note;
+    each(art.querySelectorAll('.roots .root'), function(b){
+      b.setAttribute('aria-expanded', String(b === pill));
+      if (b === pill) b.setAttribute('aria-controls', note.id); else b.removeAttribute('aria-controls');
+    });
+    var over = note.getBoundingClientRect().bottom - window.innerHeight;
+    if (over > 0){
+      var rowTop = pill.closest('.roots').getBoundingClientRect().top;
+      window.scrollBy({ top: Math.min(over, rowTop), behavior: motion() });
+    }
+  }
+
+  function closeNote(note, refocus){
+    var pill = OPENER[note.id];
+    note.hidden = true;
+    OPENER[note.id] = null;
+    if (lastNote === note) lastNote = null;
+    each(note.parentNode.querySelectorAll('.roots .root'), function(b){
+      b.setAttribute('aria-expanded', 'false');
+      b.removeAttribute('aria-controls');
+    });
+    if (refocus && pill){
+      if (pill.getBoundingClientRect().top < 0) pill.closest('.roots').scrollIntoView({ block: 'start' });
+      pill.focus({ preventScroll: true });
+    }
+  }
+
+  /* 5. One click listener. The drawer is checked first, so its clicks never reach the row. */
+  doc.addEventListener('click', function(e){
+    var t = e.target;
+    if (!t || !t.closest) return;
+
+    if (panel.contains(t)){
+      var hop = t.closest('[data-switch]');
+      if (hop){ open(hop.getAttribute('data-switch'), { cue: hop.getAttribute('data-cue'), jump: true }); return; }
+      if (t.closest('.ex-close')){ fold(true); return; }
+      var shut = t.closest('.ex-fold');
+      if (shut){ closeLesson(shut.closest('details')); return; }
+      var sum = t.closest('summary');
+      if (sum && current){
+        var d = sum.parentNode;
+        if (d.open) d.querySelector('.ex-body').textContent = '';
+        else fill(d, current.key);
+      }
+      return;
+    }
+
+    var noteEl = t.closest('.root-note');
+    if (noteEl){
+      var nshut = t.closest('.ex-fold');
+      if (nshut){ closeLesson(nshut.closest('details')); return; }
+      var nsum = t.closest('summary');
+      if (nsum){
+        var nd = nsum.parentNode;
+        if (nd.open) nd.querySelector('.ex-body').textContent = '';
+        else fill(nd, null, true);
+        return;
+      }
+      if (t.closest('.note-close')) closeNote(noteEl, true);
+      return;
+    }
+
+    var head = t.closest('.ex-head');
+    if (head && explorer.contains(head)){
+      if (!t.closest('.ex-item')){
+        var sel = window.getSelection ? window.getSelection() : null;
+        if (sel && !sel.isCollapsed && head.contains(sel.anchorNode)) return;
+      }
+      var key = head.parentNode.getAttribute('data-key');
+      if (current && current.key === key) fold(false); else open(key);
+      if (ITEMS[key]) ITEMS[key].btn.focus({ preventScroll: true });
+      return;
+    }
+
+    var pill = t.closest('article.lesson .roots .root');
+    if (pill){ toggleNote(pill); pill.focus({ preventScroll: true }); }
+  });
+
+  /* 6. Keyboard. Escape closes the innermost open thing; arrows move between rows. */
+  doc.addEventListener('keydown', function(e){
+    var a = doc.activeElement;
+    if (!a || !a.closest) return;
+    if (e.key === 'Escape' || e.key === 'Esc'){
+      var note = a.closest('.root-note');
+      if (note && !note.hidden){
+        var nd = a.closest('details.ex-lesson');
+        if (nd && nd.open) closeLesson(nd); else closeNote(note, true);
+        e.preventDefault();
+        return;
+      }
+      var pill = a.closest('article.lesson .roots .root');
+      if (pill){
+        var pa = pill.closest('article.lesson');
+        var nt = pa ? doc.getElementById('note-' + pa.id) : null;
+        if (nt && !nt.hidden){ closeNote(nt, false); e.preventDefault(); }
+        return;
+      }
+      if (current && panel.contains(a)){
+        var d = a.closest('details.ex-lesson');
+        if (d && d.open) closeLesson(d); else fold(true);
+        e.preventDefault();
+        return;
+      }
+      if (current && a === current.btn){ fold(false); e.preventDefault(); return; }
+      if (a === doc.body || a === doc.documentElement){
+        if (lastNote && !lastNote.hidden){ closeNote(lastNote, true); e.preventDefault(); }
+        else if (current){ fold(true); e.preventDefault(); }
+      }
+      return;
+    }
+    if (e.altKey || e.ctrlKey || e.metaKey || !a.classList || !a.classList.contains('ex-item')) return;
+    var i = BTNS.indexOf(a), j;
+    if (e.key === 'ArrowDown') j = Math.min(i + 1, BTNS.length - 1);
+    else if (e.key === 'ArrowUp') j = Math.max(i - 1, 0);
+    else if (e.key === 'Home') j = 0;
+    else if (e.key === 'End') j = BTNS.length - 1;
+    else return;
+    e.preventDefault();
+    if (j !== i) BTNS[j].focus();
+  });
+
+  doc.documentElement.classList.add('is-live');
+})();
+</script>
+</body>
+</html>
